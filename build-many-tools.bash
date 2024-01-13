@@ -26,7 +26,7 @@ unpack gcc "$(pwd)"/gcc-*.tar*
 ( cd gcc && find include -print0 | cpio -0updlm ../tool-src )
 
 mlibc_src="$(pwd)/mlibc-src"
-git clone ${MLIBC-https://github.com/managarm/mlibc.git} "${mlibc_src}"
+git clone ${MLIBC-https://github.com/Neptune650/mlibc.git} "${mlibc_src}"
 
 mkdir linux
 unpack linux "$(pwd)"/linux-*.tar*
@@ -65,7 +65,7 @@ for target in "${targets[@]}"; do (
     ../tool-src/configure \
         --enable-languages=c,c++,lto \
         --with-pkgversion=managarm \
-        --with-bugurl=https://github.com/managarm/mlibc-crossers/issues/ \
+        --with-bugurl=https://github.com/Neptune650/mlibc-crossers/issues/ \
         --target="${target}" \
         --host="${host}" \
         --build="${host}" \
