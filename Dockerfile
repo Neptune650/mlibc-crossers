@@ -1,4 +1,4 @@
-FROM ubuntu:23.04 AS source-fetched
+FROM ubuntu:24.04 AS source-fetched
 
 ENV TZ=Etc/UTC \
     DEBIAN_FRONTEND=noninteractive

@@ -4,6 +4,7 @@ targets=(
     x86_64-linux-mlibc
     aarch64-linux-mlibc
     i686-linux-mlibc
+    m68k-linux-mlibc
 )
 
 set -xe
@@ -81,6 +82,7 @@ for target in "${targets[@]}"; do (
         --disable-{libssp,libsanitizer,libquadmath,gdb,gold,gprof,gprofng} \
         --disable-{libdecnmumber,readline,sim,libctf,libgomp,libatomic} \
         --disable-{libffi,libitm,libvtv} \
+        --disable-fixincludes \
         "${workarounds[@]}" \
         ${MANYTOOLS_CONF_EXTRA}
     make -O -j"${PARALLELISM}"
